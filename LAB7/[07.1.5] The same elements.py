@@ -1,9 +1,10 @@
-#[07.1.5] The same elements
+# [07.1.5] The same elements
 
-my_first_list = [1,4,9,16,9,7,4,9,11]
-my_second_list = [11,11,7,9,16,4,1]
+my_first_list = [1, 4, 9, 16, 9, 7, 4, 9, 11]
+my_second_list = [11, 11, 7, 9, 16, 4, 1]
 
-def same_set(a,b):
+
+def same_set(a, b):
     a = list(dict.fromkeys(a))
     b = list(dict.fromkeys(b))
     a = (sorted(a))
@@ -21,10 +22,16 @@ def same_set(a,b):
     else:
         for i in range(len(b)):
             if a[i] == b[i]:
-                counter = counter +1
+                counter = counter + 1
         if counter == len(b):
             return True
         else:
             return False
 
-print(same_set(my_first_list,my_second_list))
+
+def main():
+    print(same_set(my_first_list, my_second_list))
+
+
+if __name__ == '__main__':
+    main()

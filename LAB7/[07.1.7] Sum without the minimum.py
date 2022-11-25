@@ -24,4 +24,5 @@ def main():
     sum_without_smallest(my_list)
 
 
-main()
+if __name__ == '__main__':
+    main()

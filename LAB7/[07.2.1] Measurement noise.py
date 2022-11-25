@@ -15,10 +15,12 @@ def mean_of_the_list(name_of_list):
     return total/len(name_of_list)
 
 
-def measurment_noise(the_list,mean_of_the_list):
+def measurment_noise(the_list, mean_of_list):
     for i in range(len(the_list)):
-        the_list[i] = mean_of_the_list
+        the_list[i] = mean_of_list
     return the_list
+
+
 def main():
     my_list = []
     my_list = random20number(my_list)
@@ -26,7 +28,8 @@ def main():
     print(f"List: {my_list}\n"
           f"Length: {len(my_list)}\n"
           f"Mean of list: {mean_of_the_list(my_list)}\n"
-          f"My final list is {measurment_noise(my_list,mean_of_the_list(my_list))}")
+          f"My final list is {measurment_noise(my_list, mean_of_the_list(my_list))}")
 
 
-main()
+if __name__ == '__main__':
+    main()

@@ -2,8 +2,6 @@
 
 import random
 
-my_list = []
-
 
 def random20number(a):
     for i in range(20):
@@ -12,4 +10,10 @@ def random20number(a):
     print(a)
 
 
-random20number(my_list)
+def main():
+    my_list = []
+    random20number(my_list)
+
+
+if __name__ == '__main__':
+    main()

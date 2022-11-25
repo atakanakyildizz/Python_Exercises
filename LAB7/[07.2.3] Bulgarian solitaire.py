@@ -1,7 +1,6 @@
 # [07.2.3] Bulgarian solitaire
 import random
 
-
 def random_45_cards(list1):
     for i in range(45):
         list1.append(random.randint(0, 99))
@@ -23,12 +22,16 @@ def each_turn(list1, list2):
               f"My list: {list1}")
 
 
-my_list = []
-my_second_list = []
+def main():
+    my_list = []
+    my_second_list = []
+    my_list = random_45_cards(my_list)
 
-my_list = random_45_cards(my_list)
+    print(f"listem= {my_list}, \n"
+          f"My piles: {my_piles(my_list, my_second_list)}\n")
+    each_turn(my_list, my_piles(my_list, my_second_list))
 
 
-print(f"listem= {my_list}, \n"
-      f"My piles: {my_piles(my_list,my_second_list)}\n")
-each_turn(my_list, my_piles(my_list,my_second_list))
+if __name__ == '__main__':
+    main()
+
