@@ -6,45 +6,38 @@ def make_spiral(n, table):
     counter = 1
     copy_counter = 0
     table[0][0] = f"{counter}"
+    for i in range(n):
+        for j in range(n):
+            if i == 0:
+                table[i][j] = f"{counter}"
+                counter = counter + 1
+                copy_counter = counter
 
+            elif (i+1) % n == 0:
+                table[i][j] = f"{copy_counter + i}"
+                copy_counter = copy_counter - 1
+                counter = counter + 1
 
-    for a in range(n-2):
-        for i in range(n-a):
-            for j in range(n-a):
-                if i == 0:
-                    table[i][j] = f"{counter}"
-                    counter = counter + 1
-                    copy_counter = counter
+            elif (j+1) % n == 0:
+                table[i][j] = f"{counter }"
+                counter = counter + 1
+                copy_counter = counter
 
-                elif (i+1) % n == 0:
-                    table[i][j] = f"{copy_counter + i}"
-                    copy_counter = copy_counter - 1
-                    counter = counter + 1
+            elif j == 0:
 
-                elif (j+1) % n == 0:
-                    table[i][j] = f"{counter }"
-                    counter = counter + 1
-                    copy_counter = counter
-
-                elif j == 0:
-
-                    if n == 3:
-                        table[i][j] = f"{-i+9}"
-                    elif n == 4:
-                        table[i][j] = f"{-i+13}"
-                    elif n == 5:
-                        table[i][j] = f"{-i+17}"
-                    elif n == 6:
-                        table[i][j] = f"{-i+20}"
-                    elif n == 7:
-                        table[i][j] = f"{-i+25}"
-                    elif n == 8:
-                        table[i][j] = f"{-i+29}"
-                    copy_counter = copy_counter + 1
-        n = n - 1
-
-        table[i][j] = f"{counter}"
-        counter = counter + 1
+                if n == 3:
+                    table[i][j] = f"{-i+9}"
+                elif n == 4:
+                    table[i][j] = f"{-i+13}"
+                elif n == 5:
+                    table[i][j] = f"{-i+17}"
+                elif n == 6:
+                    table[i][j] = f"{-i+20}"
+                elif n == 7:
+                    table[i][j] = f"{-i+25}"
+                elif n == 8:
+                    table[i][j] = f"{-i+29}"
+                copy_counter = copy_counter + 1
 
     #counter = counter + copy_counter
     print("\n")
